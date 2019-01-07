@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+
+</head>
+
+<style type="text/css">
+    div {
+        margin: 80 80;
+        }
+    svg {
+        border-radius: 3px;
+        border: 1px solid rgba(0,0,0,.1);
+        background-color:#95A5A6;       
+        }
+    .nodetext {
+	    font-size: 12px ;
+	    font-family: SimSun;
+	    fill:#000000;
+        }
+
+    .linetext {
+	    font-size: 12px ;
+	    font-family: SimSun;
+	    fill:#0000FF;
+	    fill-opacity:0.0;
+        }
+    .time {
+        font-size: 20px;
+        }
+	.origin-dest-line {
+  		stroke: #515A5A;
+ 		stroke-width: 4;
+		}
+	.origin-text, .dest-text {
+  		font-size: 14px;
+		}
+	.origin-dot, .dest-dot {
+  		fill: #515A5A;
+		}
+
+</style>
+
+<body>
+    <div>
+    <svg id="svg1" width="50%" height="400"> </svg>
+    <svg id="svg2" width="49%" height="400"> </svg>
+    <svg id="svg3" width="99.5%" height="200">
+         <text class="time" x="650" y="70" text-anchor="middle">时间轴</text>
+         <text class="origin-text" x="90" y="100" text-anchor="end">宋</text>
+  		 <text class="dest-text" x="1220" y="100" text-anchor="start">明</text>
+ 		 <circle class="origin-dot" r="5" cx="100" cy="100" />
+ 		 <circle class="dest-dot" r="5" cx="1210" cy="100" />
+ 		 <line class="origin-dest-line" x1="110" y1="100" x2="1200" y2="100" />
+    </svg>
+    </div>
+</body>
+
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script>
+	var svg1 = d3.select("body").select("#svg1");
+	var svg2 = d3.select("body").select("#svg2");
+	var svg3 = d3.select("body").select("#svg3");
+
+
+	//
+	//svg1 人物关系
+	//
+
+	var width = 660;
+	var height = 400;
+	var img_w = 77;
+	var img_h = 90;
+
+	d3.json("data.json", function(error, root1) {
+		
+		if (error) 
+			return console.error(error);
+		console.log(root1);
+
+		var force = d3.layout.force()
+							.nodes(root1.nodes)
+							.links(root1.edges)
+							.size([660,400])
+							.linkDistance(200)
+							.charge(-1500)
+							.start();
+							
+			var edges_line = svg1.selectAll("line")
+								.data(root1.edges)
+								.enter()
+								.append("line")
+								.style("stroke","#ccc")
+								.style("stroke-width",1);
+								
+			var edges_text = svg1.selectAll(".linetext")
+								.data(root1.edges)
+								.enter()
+								.append("text")
+								.attr("class","linetext")
+								.text(function(d){
+									return d.relation;
+								});
+			
+								
+			var nodes_img = svg1.selectAll("image")
+								.data(root1.nodes)
+								.enter()
+								.append("image")
+								.attr("width",77)
+								.attr("height",90)
+								.attr("xlink:href",function(d){
+									return d.image;
+								})
+								.on("mouseover",function(d,i){
+									//显示连接线上的文字
+									edges_text.style("fill-opacity",function(edge){
+										if( edge.source === d || edge.target === d ){
+											return 1.0;
+										}
+									});
+								})
+								.on("mouseout",function(d,i){
+									//隐去连接线上的文字
+									edges_text.style("fill-opacity",function(edge){
+										if( edge.source === d || edge.target === d ){
+											return 0.0;
+										}
+									});
+								})
+								.on("click",function(d,i){
+									svg3.selectAll(".datacircle").remove();
+									svg3.selectAll(".mytext").remove();
+									svg2.selectAll("path").attr("fill","yellow");
+									life = d.life;
+									console.log(life);											
+								})
+								//.on("click",function(d,i){
+									
+								//	console.log(d.year);
+								//	d.year.foreach(function(d,i){d3.select("body").select("div").select("#svg3")			.append("circle")									    
+								//	    .attr("cx",d)
+								//	    .attr("cy",100)
+								//	    .attr("r",10)		})
+								.call(force.drag);
+			
+			var text_dx = -20;
+			var text_dy = 20;
+			
+			var nodes_text = svg1.selectAll(".nodetext")
+								.data(root1.nodes)
+								.enter()
+								.append("text")
+								.attr("class","nodetext")
+								.attr("dx",text_dx)
+								.attr("dy",text_dy)
+								.text(function(d){
+									return d.name;
+								});
+			
+								
+			force.on("tick", function(){
+				
+				//限制结点的边界
+				root1.nodes.forEach(function(d,i){
+					d.x = d.x - img_w/2 < 0     ? img_w/2 : d.x ;
+					d.x = d.x + img_w/2 > width ? width - img_w/2 : d.x ;
+					d.y = d.y - img_h/2 < 0      ? img_h/2 : d.y ;
+					d.y = d.y + img_h/2 + text_dy > height ? height - img_h/2 - text_dy : d.y ;
+				});
+			
+				//更新连接线的位置
+				 edges_line.attr("x1",function(d){ return d.source.x; });
+				 edges_line.attr("y1",function(d){ return d.source.y; });
+				 edges_line.attr("x2",function(d){ return d.target.x; });
+				 edges_line.attr("y2",function(d){ return d.target.y; });
+				 
+				 //更新连接线上文字的位置
+				 edges_text.attr("x",function(d){ return (d.source.x + d.target.x) / 2 ; });
+				 edges_text.attr("y",function(d){ return (d.source.y + d.target.y) / 2 ; });
+				 
+				 
+				 //更新结点图片和文字
+				 nodes_img.attr("x",function(d){ return d.x - img_w/2; });
+				 nodes_img.attr("y",function(d){ return d.y - img_h/2; });
+				 
+				 nodes_text.attr("x",function(d){ return d.x });
+				 nodes_text.attr("y",function(d){ return d.y + img_w/2; });
+			});
+		});
+
+
+
+	//
+	//svg2 地图
+	//
+
+	var projection = d3.geo.equirectangular()
+						.center([107, 31])
+						.scale(550)
+    					.translate([350, 245]);
+	
+	var path = d3.geo.path()
+					.projection(projection);
+	
+	
+	var color = d3.scale.category20();
+	
+	
+	d3.json("china.geojson", function(error, root) {
+		
+		if (error) 
+			return console.error(error);
+		console.log(root);
+		
+		svg2.selectAll("path")
+			.data( root.features )
+			.enter()
+			.append("path")
+			.attr("class",function(d,i){return d.properties.name})
+			.attr("stroke","#273746")
+			.attr("stroke-width",0.3)
+			.attr("fill", function(d,i){
+				return "yellow";
+			})
+			.attr("d", path )
+			.on("mouseover",function(d,i){
+                d3.select(this)
+                    .attr("fill","#fff");
+            })
+            .on("mouseout",function(d,i){
+                d3.select(this)
+                    .attr("fill","yellow");
+            });        
+        });
+
+	var colorlinear = d3.scale.linear()
+                        .domain([0, 30])
+                        .range([0, 1]);
+ 
+        //定义最小值和最大值对应的颜色
+    var a = d3.rgb(255, 255, 0);  //浅灰色
+    var b = d3.rgb(255, 0, 0);    //灰色
+         
+        //颜色插值函数
+    var mapColor = d3.interpolate(a,b);
+
+
+
+ 	//颜色渐变
+    var defs = svg2.append("defs");
+
+	var linearGradient = defs.append("linearGradient")
+						.attr("id","linearColor")
+						.attr("x1","0%")
+						.attr("y1","100%")
+						.attr("x2","0%")
+						.attr("y2","0%");
+
+	var stop1 = linearGradient.append("stop")
+				.attr("offset","0%")
+				.style("stop-color","yellow");
+
+	var stop2 = linearGradient.append("stop")
+				.attr("offset","100%")
+				.style("stop-color","red");
+
+	//添加一个矩形，并应用线性渐变
+	var colorRect = svg2.append("rect")
+				.attr("x", 570)
+				.attr("y", 220)
+				.attr("width", 20)
+				.attr("height", 140)
+				.style("fill","url(#" + linearGradient.attr("id") + ")");
+				
+	//svg2.append("path")
+    //           .datum({type: "LineString", coordinates: [[104,37], [108,36]]})
+    //           .attr("class", "route")
+    //           .attr("d", path)
+    //           .attr("stroke","red");
+    //
+	//svg3 时间轴
+	//
+	var life = [];
+    setInterval("circle();",100);
+	 function circle(){
+		svg3.selectAll(".datacircle")
+	 	 .data(life)
+	 	 .enter()
+	 	 .append("circle")
+	 	 .attr("class","datacircle")
+	 	 .attr("cx",function(d,i){return d.year})
+	 	 .attr("cy",100)
+	 	 .attr("r",10)
+	 	 .on("click",function(d,i){
+	 	 	d3.select(this).attr("fill","#fff");
+	 	 	svg2.select(d.spot)
+	 	 		.attr("fill","#fff");
+	 	 	svg1.append("image")
+         	   .attr("class","thingimage")
+	           .attr("x",300)
+	           .attr("y",200)
+	    	   .attr("width",0)
+	    	   .attr("height",0)
+	    	   .attr("xlink:href",d.thingimage)
+	    	   .transition()
+               .duration(500)
+               .attr("x",0)
+	           .attr("y",0)
+	    	   .attr("width",600)
+	    	   .attr("height",400);
+	 	 })
+	 	 .on("mouseout",function(d,i){
+	 	 	svg3.selectAll(".datacircle").attr("fill","#000");
+	 	 	svg1.selectAll(".thingimage").remove();
+	 	 });
+	 	
+
+	 	svg3.selectAll(".mytext")
+	 	 .data(life)
+	 	 .enter()
+	 	 .append("text")
+	 	 .attr("class","mytext")
+	 	 .text(function(d){return d.year})
+	 	 .attr("x",function(d,i){return d.year})
+	 	 .attr("y",115)
+	 	 .attr("text-anchor","middle")
+	 	 .attr("dy",10)
+	 	 .attr("fill","#000")
+
+
+	 	life.forEach((d,i)=>{
+	 		svg2.select(d.spot)
+	 			.attr("fill",mapColor(colorlinear(d.value)))
+	 	})
+	 	};
+	
+    
+    
+</script>
+</html>

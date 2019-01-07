@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+</head>
+<style type="text/css">
+	#svg1 { position:absolute;
+            left:100px;
+            top:100px;}
+    svg {
+        border-radius: 3px;
+        border: 1px solid rgba(0,0,0,.1);
+        }
+</style>
+<body>
+	<p>金庸1</p>
+	<a href="jinyong2.html">到金庸2</a>
+	<div style="background-color:#EEEEEE;height:200px;">内容在这里</div>
+	<div id="div1" style="background-color:#EEEEEE;position: static;height:200px;width:400px;float:left;"></div>
+	<div style="background-color:#EEEEEE;background-image:url('agan.jpg');background-repeat:no-repeat;height:200px;width:400px;float:right;">内容在这里</div>
+	<p>哈哈哈</p>
+	<svg width="600" height="500"> <text x="300" y="50" >nihao</text></svg>
+
+	<script src="http://d3js.org/d3.v3.min.js"></script>
+	<script type="text/javascript">
+		svg1 = d3.select("body")
+                 .select("#div1")
+                 .append("svg")
+                 .attr("id","svg1")             
+                 .attr("width",100)
+                 .attr("height",100)
+		         .style("background-color","red")
+	</script>
+</body>
+</html>
