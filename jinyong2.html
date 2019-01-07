@@ -146,6 +146,20 @@
 								//	    .attr("r",10)		})
 								.call(force.drag);
 			
+			 var marker=svg1.append("marker")
+            			   .attr("id", "resolved")
+            				.attr("markerUnits","userSpaceOnUse")
+            				.attr("viewBox", "0 -5 10 10")//坐标系的区域
+           					.attr("refX",34)//箭头坐标
+            				.attr("refY", -1)
+           					.attr("markerWidth", 12)//标识的大小
+            				.attr("markerHeight", 12)
+            				.attr("orient", "auto")//绘制方向，可设定为：auto（自动确认方向）和 角度值
+            				.attr("stroke-width",2)//箭头宽度
+            				.append("path")
+            				.attr("d", "M0,-5L10,0L0,5")//箭头的路径
+            				.attr('fill','#fff');//箭头颜色
+
 			var text_dx = -20;
 			var text_dy = 20;
 			
@@ -176,6 +190,7 @@
 				 edges_line.attr("y1",function(d){ return d.source.y; });
 				 edges_line.attr("x2",function(d){ return d.target.x; });
 				 edges_line.attr("y2",function(d){ return d.target.y; });
+				 edges_line.attr("marker-end", "url(#resolved)");
 				 
 				 //更新连接线上文字的位置
 				 edges_text.attr("x",function(d){ return (d.source.x + d.target.x) / 2 ; });
@@ -296,8 +311,31 @@
 	 	 .attr("r",10)
 	 	 .on("click",function(d,i){
 	 	 	d3.select(this).attr("fill","#fff");
+	 	 	svg2.append("circle")
+    			.attr("class","location")
+    			.attr("cx",projection(d.location)[0])
+    			.attr("cy",projection(d.location)[1])
+    			.attr("r",5)
+    			.attr("fill","#800080");
+    		svg2.append("text")
+	 			 .attr("class","locationdes")
+	 			 .text(d.locationdes)
+	 			 .attr("x",projection(d.location)[0])
+	 			 .attr("y",projection(d.location)[1] - 20)
+	 			 .attr("text-anchor","middle")
+	 	 		.attr("dy",10)
+	 	 		.attr("fill","#800080");
 	 	 	svg2.select(d.spot)
-	 	 		.attr("fill","#fff");
+	 	 		.attr("fill","#fff");	
+	 	 	svg3.append("text")
+	 			 .attr("class","des")
+	 			 .text(d.des)
+	 			 .attr("x",650)
+	 			 .attr("y",155)
+	 			 .attr("text-anchor","middle")
+	 	 		.attr("dy",10)
+	 	 		.attr("fill","#000");
+
 	 	 	svg1.append("image")
          	   .attr("class","thingimage")
 	           .attr("x",300)
@@ -315,6 +353,9 @@
 	 	 .on("mouseout",function(d,i){
 	 	 	svg3.selectAll(".datacircle").attr("fill","#000");
 	 	 	svg1.selectAll(".thingimage").remove();
+	 	 	svg2.selectAll(".location").remove();
+	 	 	svg2.selectAll(".locationdes").remove();
+	 	 	svg3.selectAll(".des").remove();
 	 	 });
 	 	
 
