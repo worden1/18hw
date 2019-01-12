@@ -1,6 +1,6 @@
 {
 "nodes":[
-{ "name": "云天河"   , "image" : "agan.jpg"  , "life" : [{"year":500,"spot":".甘肃","value":20,"thingimage":"agan.jpg","location":[108,37],"locationdes":"华山","des":"华山论剑"},{"year":700,"spot":".青海","value":10,"thingimage":"agan.jpg"}] },
+{ "name": "云天河"   , "image" : "agan.jpg"  , "life" : [{"year":1200,"spot":".甘肃","value":20,"thingimage":"agan.jpg","location":[108,37],"locationdes":"华山","des":"华山论剑"},{"year":1300,"spot":".青海","value":10,"thingimage":"agan.jpg"}] },
 { "name": "韩菱纱"   , "image" : "agan.jpg"  , "life" : [{"year":600,"spot":".河北","value":15},{"year":900,"spot":".河南","value":30}] },
 { "name": "柳梦璃"   , "image" : "agan.jpg"  , "year" : [1000,1200,1300] },
 { "name": "慕容紫英" , "image" : "agan.jpg"  , "year" : [1000,1200,1300] }

@@ -24,11 +24,12 @@
     .linetext {
 	    font-size: 12px ;
 	    font-family: SimSun;
-	    fill:#0000FF;
+	    fill:#2C3E50;
 	    fill-opacity:0.0;
         }
     .time {
-        font-size: 20px;
+        font-size: 15px;
+        fill: #515A5A;
         }
 	.origin-dest-line {
   		stroke: #515A5A;
@@ -36,6 +37,7 @@
 		}
 	.origin-text, .dest-text {
   		font-size: 14px;
+  		fill: #D5D8DC;
 		}
 	.origin-dot, .dest-dot {
   		fill: #515A5A;
@@ -45,12 +47,17 @@
 
 <body>
     <div>
-    <svg id="svg1" width="50%" height="400"> </svg>
-    <svg id="svg2" width="49%" height="400"> </svg>
+    <svg id="svg1" width="50%" height="400">
+    	<image xlink:href="b2.jpg" x="0" y="-150" height="200%" width="200%"/>
+    </svg>
+    <svg id="svg2" width="49%" height="400">
+    	<image xlink:href="b2.jpg" x="0" y="-150" height="200%" width="200%"/>
+     </svg>
     <svg id="svg3" width="99.5%" height="200">
-         <text class="time" x="650" y="70" text-anchor="middle">时间轴</text>
-         <text class="origin-text" x="90" y="100" text-anchor="end">宋</text>
-  		 <text class="dest-text" x="1220" y="100" text-anchor="start">明</text>
+    	<image xlink:href="b3.jpg" x="-2700" y="0" height="500%" width="500%"/>
+         <text class="time" x="650" y="30" text-anchor="middle">时间轴</text>
+         <text class="origin-text" x="90" y="104" text-anchor="end">南宋</text>
+  		 <text class="dest-text" x="1220" y="104" text-anchor="start">明</text>
  		 <circle class="origin-dot" r="5" cx="100" cy="100" />
  		 <circle class="dest-dot" r="5" cx="1210" cy="100" />
  		 <line class="origin-dest-line" x1="110" y1="100" x2="1200" y2="100" />
@@ -64,6 +71,316 @@
 	var svg2 = d3.select("body").select("#svg2");
 	var svg3 = d3.select("body").select("#svg3");
 
+	var timelinear = d3.scale.linear()
+                        .domain([1127, 1368])
+                        .range([110, 1200]);
+
+    svg3.append("line")
+    	.attr("x1",timelinear(1127))
+    	.attr("y1",70)
+    	.attr("x2",timelinear(1127))
+    	.attr("y2",130)
+    	.style("stroke","#515A5A")
+    	.style("stroke-width",2);
+    svg3.append("text")
+	 	.text("靖康之变，南宋建立")
+	 	.attr("x",timelinear(1127))
+	 	.attr("y",55)
+	 	.attr("text-anchor","middle")
+	 	.attr("dy",10)
+	 	.attr("fill","#515A5A")
+	 	.style("font-size","12px")
+	 	.style("font-weighe","bold");
+	svg3.append("text")
+	 	.text("南宋建炎元年")
+	 	.attr("x",timelinear(1127))
+	 	.attr("y",150)
+	 	.attr("text-anchor","middle")
+	 	.attr("dy",10)
+	 	.attr("fill","#515A5A")
+	 	.style("font-size","12px")
+	 	.style("font-weighe","bold");
+	svg3.append("text")
+	 	.text(1127)
+	 	.attr("x",timelinear(1127))
+	 	.attr("y",133)
+	 	.attr("text-anchor","middle")
+	 	.attr("dy",10)
+	 	.attr("fill","#515A5A")
+	 	.style("font-size","12px")
+	 	.style("font-weighe","bold");
+
+
+	 svg3.append("line")
+    	.attr("x1",timelinear(1208))
+    	.attr("y1",70)
+    	.attr("x2",timelinear(1208))
+    	.attr("y2",130)
+    	.style("stroke","#515A5A")
+    	.style("stroke-width",2);
+    svg3.append("text")
+	 	.text("宋金嘉定和议")
+	 	.attr("x",timelinear(1208))
+	 	.attr("y",55)
+	 	.attr("text-anchor","middle")
+	 	.attr("dy",10)
+	 	.attr("fill","#515A5A")
+	 	.style("font-size","12px")
+	 	.style("font-weighe","bold");
+	svg3.append("text")
+	 	.text("南宋嘉定元年")
+	 	.attr("x",timelinear(1208))
+	 	.attr("y",150)
+	 	.attr("text-anchor","middle")
+	 	.attr("dy",10)
+	 	.attr("fill","#515A5A")
+	 	.style("font-size","12px")
+	 	.style("font-weighe","bold");
+	svg3.append("text")
+	 	.text(1208)
+	 	.attr("x",timelinear(1208))
+	 	.attr("y",133)
+	 	.attr("text-anchor","middle")
+	 	.attr("dy",10)
+	 	.attr("fill","#515A5A")
+	 	.style("font-size","12px")
+	 	.style("font-weighe","bold");
+
+
+
+	 svg3.append("line")
+    	.attr("x1",timelinear(1227))
+    	.attr("y1",70)
+    	.attr("x2",timelinear(1227))
+    	.attr("y2",130)
+    	.style("stroke","#515A5A")
+    	.style("stroke-width",2);
+    svg3.append("text")
+	 	.text("成吉思汗逝世")
+	 	.attr("x",timelinear(1227))
+	 	.attr("y",55)
+	 	.attr("text-anchor","middle")
+	 	.attr("dy",10)
+	 	.attr("fill","#515A5A")
+	 	.style("font-size","12px")
+	 	.style("font-weighe","bold");
+	svg3.append("text")
+	 	.text("南宋宝庆三年")
+	 	.attr("x",timelinear(1227))
+	 	.attr("y",150)
+	 	.attr("text-anchor","middle")
+	 	.attr("dy",10)
+	 	.attr("fill","#515A5A")
+	 	.style("font-size","12px")
+	 	.style("font-weighe","bold");
+	svg3.append("text")
+	 	.text(1227)
+	 	.attr("x",timelinear(1227))
+	 	.attr("y",133)
+	 	.attr("text-anchor","middle")
+	 	.attr("dy",10)
+	 	.attr("fill","#515A5A")
+	 	.style("font-size","12px")
+	 	.style("font-weighe","bold");
+
+
+
+	svg3.append("line")
+    	.attr("x1",timelinear(1251))
+    	.attr("y1",70)
+    	.attr("x2",timelinear(1251))
+    	.attr("y2",130)
+    	.style("stroke","#515A5A")
+    	.style("stroke-width",2);
+    svg3.append("text")
+	 	.text("蒙哥即蒙古大汗")
+	 	.attr("x",timelinear(1251))
+	 	.attr("y",55)
+	 	.attr("text-anchor","middle")
+	 	.attr("dy",10)
+	 	.attr("fill","#515A5A")
+	 	.style("font-size","12px")
+	 	.style("font-weighe","bold");
+	svg3.append("text")
+	 	.text("南宋淳祐十一年")
+	 	.attr("x",timelinear(1251))
+	 	.attr("y",150)
+	 	.attr("text-anchor","middle")
+	 	.attr("dy",10)
+	 	.attr("fill","#515A5A")
+	 	.style("font-size","12px")
+	 	.style("font-weighe","bold");
+	svg3.append("text")
+	 	.text(1251)
+	 	.attr("x",timelinear(1251))
+	 	.attr("y",133)
+	 	.attr("text-anchor","middle")
+	 	.attr("dy",10)
+	 	.attr("fill","#515A5A")
+	 	.style("font-size","12px")
+	 	.style("font-weighe","bold");
+
+
+
+	svg3.append("line")
+    	.attr("x1",timelinear(1271))
+    	.attr("y1",70)
+    	.attr("x2",timelinear(1271))
+    	.attr("y2",130)
+    	.style("stroke","#515A5A")
+    	.style("stroke-width",2);
+    svg3.append("text")
+	 	.text("忽必烈称帝建元")
+	 	.attr("x",timelinear(1271))
+	 	.attr("y",55)
+	 	.attr("text-anchor","middle")
+	 	.attr("dy",10)
+	 	.attr("fill","#515A5A")
+	 	.style("font-size","12px")
+	 	.style("font-weighe","bold");
+	svg3.append("text")
+	 	.text("元至元八年")
+	 	.attr("x",timelinear(1271))
+	 	.attr("y",150)
+	 	.attr("text-anchor","middle")
+	 	.attr("dy",10)
+	 	.attr("fill","#515A5A")
+	 	.style("font-size","12px")
+	 	.style("font-weighe","bold");
+	svg3.append("text")
+	 	.text("南宋咸淳七年")
+	 	.attr("x",timelinear(1271))
+	 	.attr("y",165)
+	 	.attr("text-anchor","middle")
+	 	.attr("dy",10)
+	 	.attr("fill","#515A5A")
+	 	.style("font-size","12px")
+	 	.style("font-weighe","bold");
+	svg3.append("text")
+	 	.text(1271)
+	 	.attr("x",timelinear(1271))
+	 	.attr("y",133)
+	 	.attr("text-anchor","middle")
+	 	.attr("dy",10)
+	 	.attr("fill","#515A5A")
+	 	.style("font-size","12px")
+	 	.style("font-weighe","bold");
+
+
+
+	svg3.append("line")
+    	.attr("x1",timelinear(1294))
+    	.attr("y1",70)
+    	.attr("x2",timelinear(1294))
+    	.attr("y2",130)
+    	.style("stroke","#515A5A")
+    	.style("stroke-width",2);
+    svg3.append("text")
+	 	.text("忽必烈病逝")
+	 	.attr("x",timelinear(1294))
+	 	.attr("y",55)
+	 	.attr("text-anchor","middle")
+	 	.attr("dy",10)
+	 	.attr("fill","#515A5A")
+	 	.style("font-size","12px")
+	 	.style("font-weighe","bold");
+	svg3.append("text")
+	 	.text("元至元三十一年")
+	 	.attr("x",timelinear(1294))
+	 	.attr("y",150)
+	 	.attr("text-anchor","middle")
+	 	.attr("dy",10)
+	 	.attr("fill","#515A5A")
+	 	.style("font-size","12px")
+	 	.style("font-weighe","bold");
+	svg3.append("text")
+	 	.text(1294)
+	 	.attr("x",timelinear(1294))
+	 	.attr("y",133)
+	 	.attr("text-anchor","middle")
+	 	.attr("dy",10)
+	 	.attr("fill","#515A5A")
+	 	.style("font-size","12px")
+	 	.style("font-weighe","bold");
+	 	
+
+
+
+	svg3.append("line")
+    	.attr("x1",timelinear(1368))
+    	.attr("y1",70)
+    	.attr("x2",timelinear(1368))
+    	.attr("y2",130)
+    	.style("stroke","#515A5A")
+    	.style("stroke-width",2);
+    svg3.append("text")
+	 	.text("朱元璋建立明朝")
+	 	.attr("x",timelinear(1368))
+	 	.attr("y",55)
+	 	.attr("text-anchor","middle")
+	 	.attr("dy",10)
+	 	.attr("fill","#515A5A")
+	 	.style("font-size","12px")
+	 	.style("font-weighe","bold");
+	svg3.append("text")
+	 	.text("明洪武元年")
+	 	.attr("x",timelinear(1368))
+	 	.attr("y",150)
+	 	.attr("text-anchor","middle")
+	 	.attr("dy",10)
+	 	.attr("fill","#515A5A")
+	 	.style("font-size","12px")
+	 	.style("font-weighe","bold");
+	svg3.append("text")
+	 	.text(1368)
+	 	.attr("x",timelinear(1368))
+	 	.attr("y",133)
+	 	.attr("text-anchor","middle")
+	 	.attr("dy",10)
+	 	.attr("fill","#515A5A")
+	 	.style("font-size","12px")
+	 	.style("font-weighe","bold"); 	 	
+
+
+	svg2.append("text")
+		 	.text("人物生平活动范围")
+		 	.attr("x",310)
+		 	.attr("y",20)
+		 	.attr("text-anchor","middle")
+		 	.attr("dy",10)
+		 	.attr("fill","#515A5A")
+		 	.style("font-size","15px")
+		 	.style("font-weighe","bold");
+
+    svg1.append("text")
+		 	.text("人物关系网")
+		 	.attr("x",310)
+		 	.attr("y",20)
+		 	.attr("text-anchor","middle")
+		 	.attr("dy",10)
+		 	.attr("fill","#515A5A")
+		 	.style("font-size","15px")
+		 	.style("font-weighe","bold");
+
+	svg2.append("text")
+		 	.text("50年")
+		 	.attr("x",610)
+		 	.attr("y",220)
+		 	.attr("text-anchor","middle")
+		 	.attr("dy",10)
+		 	.attr("fill","#515A5A")
+		 	.style("font-size","15px")
+		 	.style("font-weighe","bold");  
+
+	svg2.append("text")
+		 	.text("0年")
+		 	.attr("x",610)
+		 	.attr("y",350)
+		 	.attr("text-anchor","middle")
+		 	.attr("dy",10)
+		 	.attr("fill","#515A5A")
+		 	.style("font-size","15px")
+		 	.style("font-weighe","bold");    
 
 	//
 	//svg1 人物关系
@@ -92,7 +409,7 @@
 								.data(root1.edges)
 								.enter()
 								.append("line")
-								.style("stroke","#ccc")
+								.style("stroke","#2C3E50")
 								.style("stroke-width",1);
 								
 			var edges_text = svg1.selectAll(".linetext")
@@ -105,10 +422,11 @@
 								});
 			
 								
-			var nodes_img = svg1.selectAll("image")
+			var nodes_img = svg1.selectAll(".svg1image")
 								.data(root1.nodes)
 								.enter()
 								.append("image")
+								.attr("class","svg1image")
 								.attr("width",77)
 								.attr("height",90)
 								.attr("xlink:href",function(d){
@@ -133,7 +451,7 @@
 								.on("click",function(d,i){
 									svg3.selectAll(".datacircle").remove();
 									svg3.selectAll(".mytext").remove();
-									svg2.selectAll("path").attr("fill","yellow");
+									svg2.selectAll("path").attr("fill","#FADBD8");
 									life = d.life;
 									console.log(life);											
 								})
@@ -158,7 +476,7 @@
             				.attr("stroke-width",2)//箭头宽度
             				.append("path")
             				.attr("d", "M0,-5L10,0L0,5")//箭头的路径
-            				.attr('fill','#fff');//箭头颜色
+            				.attr('fill','#2C3E50');//箭头颜色
 
 			var text_dx = -20;
 			var text_dy = 20;
@@ -238,7 +556,7 @@
 			.attr("stroke","#273746")
 			.attr("stroke-width",0.3)
 			.attr("fill", function(d,i){
-				return "yellow";
+				return "#FADBD8";
 			})
 			.attr("d", path )
 			.on("mouseover",function(d,i){
@@ -247,17 +565,17 @@
             })
             .on("mouseout",function(d,i){
                 d3.select(this)
-                    .attr("fill","yellow");
+                    .attr("fill","#FADBD8");
             });        
         });
 
 	var colorlinear = d3.scale.linear()
-                        .domain([0, 30])
+                        .domain([0, 50])
                         .range([0, 1]);
  
         //定义最小值和最大值对应的颜色
-    var a = d3.rgb(255, 255, 0);  //浅灰色
-    var b = d3.rgb(255, 0, 0);    //灰色
+    var a = d3.rgb(250, 219, 216);  //浅灰色
+    var b = d3.rgb(176, 58, 46);    //灰色
          
         //颜色插值函数
     var mapColor = d3.interpolate(a,b);
@@ -276,11 +594,11 @@
 
 	var stop1 = linearGradient.append("stop")
 				.attr("offset","0%")
-				.style("stop-color","yellow");
+				.style("stop-color","#FADBD8");
 
 	var stop2 = linearGradient.append("stop")
 				.attr("offset","100%")
-				.style("stop-color","red");
+				.style("stop-color","#B03A2E");
 
 	//添加一个矩形，并应用线性渐变
 	var colorRect = svg2.append("rect")
@@ -306,11 +624,12 @@
 	 	 .enter()
 	 	 .append("circle")
 	 	 .attr("class","datacircle")
-	 	 .attr("cx",function(d,i){return d.year})
+	 	 .attr("cx",function(d,i){return timelinear(d.year)})
 	 	 .attr("cy",100)
-	 	 .attr("r",10)
+	 	 .attr("r",6)
+	 	 .attr("fill","#D5D8DC")
 	 	 .on("click",function(d,i){
-	 	 	d3.select(this).attr("fill","#fff");
+	 	 	d3.select(this).attr("fill","#F1948A");
 	 	 	svg2.append("circle")
     			.attr("class","location")
     			.attr("cx",projection(d.location)[0])
@@ -351,7 +670,7 @@
 	    	   .attr("height",400);
 	 	 })
 	 	 .on("mouseout",function(d,i){
-	 	 	svg3.selectAll(".datacircle").attr("fill","#000");
+	 	 	svg3.selectAll(".datacircle").attr("fill","#D5D8DC");
 	 	 	svg1.selectAll(".thingimage").remove();
 	 	 	svg2.selectAll(".location").remove();
 	 	 	svg2.selectAll(".locationdes").remove();
@@ -365,11 +684,11 @@
 	 	 .append("text")
 	 	 .attr("class","mytext")
 	 	 .text(function(d){return d.year})
-	 	 .attr("x",function(d,i){return d.year})
+	 	 .attr("x",function(d,i){return timelinear(d.year)})
 	 	 .attr("y",115)
 	 	 .attr("text-anchor","middle")
 	 	 .attr("dy",10)
-	 	 .attr("fill","#000")
+	 	 .attr("fill","#D5D8DC")
 
 
 	 	life.forEach((d,i)=>{
