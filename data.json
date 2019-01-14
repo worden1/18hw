@@ -38,7 +38,15 @@
 			{"year":1224,"axis":1249,"spot":".内蒙古","value":5,"thingimage":"随成吉思汗出征花剌子模，黄蓉帮助.jpg","location":[39.67,66.96],"locationdes":"花剌子模","des":"随成吉思汗出征花剌子模，黄蓉帮助"},
 			{"year":1224,"axis":1252,"spot":".内蒙古","value":5,"thingimage":"逃离蒙古被抓自杀.jpg","location":[47.10104,102.83658],"locationdes":"蒙古","des":"逃离蒙古被抓自杀"},
 			{"year":1224,"axis":1255,"spot":".内蒙古","value":5,"thingimage":"华筝婚约终止，心灰意冷丘处机相救.jpg","location":[47.10104,102.83658],"locationdes":"蒙古","des":"华筝婚约终止，心灰意冷丘处机相救"},
-			{"year":1225,"axis":1258,"spot":".陕西","value":1,"thingimage":"第二次华山论剑，郭黄成婚.jpg","location":[34.125,110.01],"locationdes":"华山","des":"第二次华山论剑，郭黄成婚"}
+			{"year":1225,"axis":1258,"spot":".陕西","value":1,"thingimage":"第二次华山论剑，郭黄成婚.jpg","location":[34.125,110.01],"locationdes":"华山","des":"第二次华山论剑，郭黄成婚"},
+			{"year":1237,"axis":1261,"spot":".浙江","value":5,"thingimage":"郭黄带杨过到桃花岛.jpg","location":[29.83,122.25],"locationdes":"桃花岛","des":"郭黄带杨过到桃花岛"},
+			{"year":1238,"axis":1264,"spot":".陕西","value":2,"thingimage":"郭靖送杨过到全真教.jpg","location":[34,108],"locationdes":"终南山","des":"郭靖送杨过到全真教"},
+			{"year":1243,"axis":1267,"spot":".陕西","value":2,"thingimage":"大散关英雄大会遇郭黄.jpg","location":[34.26307,107.02655],"locationdes":"大散关","des":"大散关英雄大会遇郭黄"},
+			{"year":1243,"axis":1270,"spot":".陕西","value":2,"thingimage":"杨龙相聚，郭靖许配郭芙，杨过不肯.jpg","location":[34.26307,107.02655],"locationdes":"大散关","des":"杨龙相聚，郭靖许配郭芙，杨过不肯"},
+			{"year":1243,"axis":1273,"spot":".湖北","value":5,"thingimage":"杨龙回襄阳欲杀郭靖，后感动.jpg","location":[32.02652,112.15870],"locationdes":"襄阳","des":"杨龙回襄阳欲杀郭靖，后感动"},
+			{"year":1243,"axis":1276,"spot":".湖北","value":5,"thingimage":"杨龙襄阳护郭黄，黄蓉生龙凤胎.jpg","location":[32.02652,112.15870],"locationdes":"襄阳","des":"杨龙襄阳护郭黄，黄蓉生龙凤胎"},
+			{"year":1260,"axis":1279,"spot":".湖北","value":5,"thingimage":"杨龙襄阳救郭襄，众人联手击退蒙古军.jpg","location":[32.02652,112.15870],"locationdes":"襄阳","des":"杨龙襄阳救郭襄，众人联手击退蒙古军"},
+			{"year":1260,"axis":1282,"spot":".陕西","value":2,"thingimage":"第三次华山论剑.jpg","location":[34.125,110.01],"locationdes":"华山","des":"第三次华山论剑"}
 			] },
 
 { "name": "黄蓉"   , "image" : "黄蓉.png"  , 
@@ -51,7 +59,18 @@
 			{"year":1223,"axis":1241,"spot":".浙江","value":5,"thingimage":"郭黄桃花岛误会杨康嫁祸黄药师.jpg","location":[29.83,122.25],"locationdes":"桃花岛","des":"郭黄桃花岛误会杨康嫁祸黄药师"},
 			{"year":1224,"axis":1244,"spot":".浙江","value":5,"thingimage":"嘉兴铁枪庙揭穿杨康阴谋，杨康死.jpg","location":[30.76747,120.75320],"locationdes":"嘉兴","des":"嘉兴铁枪庙揭穿杨康阴谋，杨康死"},
 			{"year":1224,"axis":1247,"spot":".蒙古","value":1,"thingimage":"随成吉思汗出征花剌子模，黄蓉帮助.jpg","location":[39.67,66.96],"locationdes":"花剌子模","des":"随成吉思汗出征花剌子模，黄蓉帮助"},
-			{"year":1225,"axis":1250,"spot":".陕西","value":1,"thingimage":"第二次华山论剑，郭黄成婚.jpg","location":[34.125,110.01],"locationdes":"华山","des":"第二次华山论剑，郭黄成婚"}
+			{"year":1225,"axis":1250,"spot":".陕西","value":1,"thingimage":"第二次华山论剑，郭黄成婚.jpg","location":[34.125,110.01],"locationdes":"华山","des":"第二次华山论剑，郭黄成婚"},
+			{"year":1237,"axis":1253,"spot":".浙江","value":5,"thingimage":"郭黄带杨过到桃花岛.jpg","location":[29.83,122.25],"locationdes":"桃花岛","des":"郭黄带杨过到桃花岛"},
+			{"year":1243,"axis":1256,"spot":".陕西","value":2,"thingimage":"大散关英雄大会遇郭黄.jpg","location":[34.26307,107.02655],"locationdes":"大散关","des":"大散关英雄大会遇郭黄"},
+			{"year":1243,"axis":1259,"spot":".陕西","value":2,"thingimage":"杨龙相聚，郭靖许配郭芙，杨过不肯.jpg","location":[34.26307,107.02655],"locationdes":"大散关","des":"杨龙相聚，郭靖许配郭芙，杨过不肯"},
+			{"year":1243,"axis":1262,"spot":".陕西","value":2,"thingimage":"杨龙黄蓉救郭芙，后龙听黄劝离去.jpg","location":[34.26307,107.02655],"locationdes":"大散关","des":"杨龙黄蓉救郭芙，后龙听黄劝离去"},
+			{"year":1243,"axis":1265,"spot":".陕西","value":2,"thingimage":"杨黄郭芙再遇金轮，程英相助脱险.jpg","location":[34.26307,107.02655],"locationdes":"大散关","des":"杨黄郭芙再遇金轮，程英相助脱险"},
+			{"year":1243,"axis":1268,"spot":".湖北","value":5,"thingimage":"杨龙襄阳护郭黄，黄蓉生龙凤胎.jpg","location":[32.02652,112.15870],"locationdes":"襄阳","des":"杨龙襄阳护郭黄，黄蓉生龙凤胎"},
+			{"year":1244,"axis":1271,"spot":".湖北","value":5,"thingimage":"跟踪黄蓉李莫愁，抱走郭襄往终南山.jpg","location":[32.02652,112.15870],"locationdes":"襄阳","des":"跟踪黄蓉李莫愁，抱走郭襄往终南山"},
+			{"year":1244,"axis":1274,"spot":".陕西","value":2,"thingimage":"李莫愁带黄蓉郭芙到古墓，郭芙误伤龙女.jpg","location":[34,108],"locationdes":"终南山","des":"李莫愁带黄蓉郭芙到古墓，郭芙误伤龙女"},
+			{"year":1244,"axis":1277,"spot":".陕西","value":2,"thingimage":"杨龙绝情谷还郭襄.jpg","location":[34.26307,107.02655],"locationdes":"绝情谷","des":"杨龙绝情谷还郭襄"},
+			{"year":1260,"axis":1280,"spot":".湖北","value":5,"thingimage":"杨龙襄阳救郭襄，众人联手击退蒙古军.jpg","location":[32.02652,112.15870],"locationdes":"襄阳","des":"杨龙襄阳救郭襄，众人联手击退蒙古军"},
+			{"year":1260,"axis":1283,"spot":".陕西","value":2,"thingimage":"第三次华山论剑.jpg","location":[34.125,110.01],"locationdes":"华山","des":"第三次华山论剑"}
 			] },
 
 { "name": "华筝"   , "image" : "华筝.png"  , 
@@ -100,31 +119,6 @@
 
 
 
-
-{ "name": "郭靖_神雕"   , "image" : "郭靖_神雕.png"  , 
-"life" : [{"year":1237,"axis":1237,"spot":".浙江","value":5,"thingimage":"郭黄带杨过到桃花岛.jpg","location":[29.83,122.25],"locationdes":"桃花岛","des":"郭黄带杨过到桃花岛"},
-			{"year":1238,"axis":1240,"spot":".陕西","value":2,"thingimage":"郭靖送杨过到全真教.jpg","location":[34,108],"locationdes":"终南山","des":"郭靖送杨过到全真教"},
-			{"year":1243,"axis":1243,"spot":".陕西","value":2,"thingimage":"大散关英雄大会遇郭黄.jpg","location":[34.26307,107.02655],"locationdes":"大散关","des":"大散关英雄大会遇郭黄"},
-			{"year":1243,"axis":1246,"spot":".陕西","value":2,"thingimage":"杨龙相聚，郭靖许配郭芙，杨过不肯.jpg","location":[34.26307,107.02655],"locationdes":"大散关","des":"杨龙相聚，郭靖许配郭芙，杨过不肯"},
-			{"year":1243,"axis":1249,"spot":".湖北","value":5,"thingimage":"杨龙回襄阳欲杀郭靖，后感动.jpg","location":[32.02652,112.15870],"locationdes":"襄阳","des":"杨龙回襄阳欲杀郭靖，后感动"},
-			{"year":1243,"axis":1252,"spot":".湖北","value":5,"thingimage":"杨龙襄阳护郭黄，黄蓉生龙凤胎.jpg","location":[32.02652,112.15870],"locationdes":"襄阳","des":"杨龙襄阳护郭黄，黄蓉生龙凤胎"},
-			{"year":1260,"axis":1260,"spot":".湖北","value":5,"thingimage":"杨龙襄阳救郭襄，众人联手击退蒙古军.jpg","location":[32.02652,112.15870],"locationdes":"襄阳","des":"杨龙襄阳救郭襄，众人联手击退蒙古军"},
-			{"year":1260,"axis":1263,"spot":".陕西","value":2,"thingimage":"第三次华山论剑.jpg","location":[34.125,110.01],"locationdes":"华山","des":"第三次华山论剑"}
-			] },
-			
-{ "name": "黄蓉_神雕"   , "image" : "黄蓉_神雕.png"  , 
-"life" : [{"year":1237,"axis":1237,"spot":".浙江","value":5,"thingimage":"郭黄带杨过到桃花岛.jpg","location":[29.83,122.25],"locationdes":"桃花岛","des":"郭黄带杨过到桃花岛"},
-			{"year":1243,"axis":1243,"spot":".陕西","value":2,"thingimage":"大散关英雄大会遇郭黄.jpg","location":[34.26307,107.02655],"locationdes":"大散关","des":"大散关英雄大会遇郭黄"},
-			{"year":1243,"axis":1246,"spot":".陕西","value":2,"thingimage":"杨龙相聚，郭靖许配郭芙，杨过不肯.jpg","location":[34.26307,107.02655],"locationdes":"大散关","des":"杨龙相聚，郭靖许配郭芙，杨过不肯"},
-			{"year":1243,"axis":1249,"spot":".陕西","value":2,"thingimage":"杨龙黄蓉救郭芙，后龙听黄劝离去.jpg","location":[34.26307,107.02655],"locationdes":"大散关","des":"杨龙黄蓉救郭芙，后龙听黄劝离去"},
-			{"year":1243,"axis":1252,"spot":".陕西","value":2,"thingimage":"杨黄郭芙再遇金轮，程英相助脱险.jpg","location":[34.26307,107.02655],"locationdes":"大散关","des":"杨黄郭芙再遇金轮，程英相助脱险"},
-			{"year":1243,"axis":1255,"spot":".湖北","value":5,"thingimage":"杨龙襄阳护郭黄，黄蓉生龙凤胎.jpg","location":[32.02652,112.15870],"locationdes":"襄阳","des":"杨龙襄阳护郭黄，黄蓉生龙凤胎"},
-			{"year":1244,"axis":1258,"spot":".湖北","value":5,"thingimage":"跟踪黄蓉李莫愁，抱走郭襄往终南山.jpg","location":[32.02652,112.15870],"locationdes":"襄阳","des":"跟踪黄蓉李莫愁，抱走郭襄往终南山"},
-			{"year":1244,"axis":1261,"spot":".陕西","value":2,"thingimage":"李莫愁带黄蓉郭芙到古墓，郭芙误伤龙女.jpg","location":[34,108],"locationdes":"终南山","des":"李莫愁带黄蓉郭芙到古墓，郭芙误伤龙女"},
-			{"year":1244,"axis":1264,"spot":".陕西","value":2,"thingimage":"杨龙绝情谷还郭襄.jpg","location":[34.26307,107.02655],"locationdes":"绝情谷","des":"杨龙绝情谷还郭襄"},
-			{"year":1260,"axis":1267,"spot":".湖北","value":5,"thingimage":"杨龙襄阳救郭襄，众人联手击退蒙古军.jpg","location":[32.02652,112.15870],"locationdes":"襄阳","des":"杨龙襄阳救郭襄，众人联手击退蒙古军"},
-			{"year":1260,"axis":1270,"spot":".陕西","value":2,"thingimage":"第三次华山论剑.jpg","location":[34.125,110.01],"locationdes":"华山","des":"第三次华山论剑"}
-			] },
 
 { "name": "杨过"   , "image" : "杨过.png"  , 
 "life" : [{"year":1237,"axis":1237,"spot":".江苏","value":1,"thingimage":"李莫愁灭门，陆无双程英，杨过拜义父.jpg","location":[30.42006,116.26508],"locationdes":"太湖","des":"李莫愁灭门，陆无双程英，杨过拜义父.jpg"},
@@ -361,49 +355,47 @@
 
 
 
+{ "source": 4 , "target": 13 , "relation":"侄子" },
 { "source": 13 , "target": 14 , "relation":"夫妻" },
-{ "source": 13 , "target": 15 , "relation":"侄子" },
-{ "source": 15 , "target": 16 , "relation":"夫妻" },
-{ "source": 16 , "target": 17 , "relation":"师妹" },
-{ "source": 18 , "target": 13 , "relation":"父女" },
-{ "source": 18 , "target": 14 , "relation":"母女" },
-{ "source": 18 , "target": 15 , "relation":"爱慕" },
-{ "source": 19 , "target": 15 , "relation":"爱慕" },
-{ "source": 19 , "target": 17 , "relation":"仇人" },
-{ "source": 20 , "target": 15 , "relation":"爱慕" },
-{ "source": 20 , "target": 17 , "relation":"仇人" },
-{ "source": 20 , "target": 19 , "relation":"姐妹" },
-{ "source": 21 , "target": 15 , "relation":"爱慕" },
-{ "source": 22 , "target": 21 , "relation":"父女" },
-{ "source": 22 , "target": 16 , "relation":"爱慕" },
-{ "source": 23 , "target": 18 , "relation":"夫妻" },
-{ "source": 24 , "target": 13 , "relation":"父女" },
-{ "source": 24 , "target": 14 , "relation":"母女" },
-{ "source": 25 , "target": 13 , "relation":"父子" },
-{ "source": 25 , "target": 14 , "relation":"母子" },
-{ "source": 24 , "target": 18 , "relation":"姐妹" },
-{ "source": 24 , "target": 25 , "relation":"姐弟" },
-{ "source": 18 , "target": 25 , "relation":"姐弟" },
-{ "source": 24 , "target": 15 , "relation":"敬佩" },
+{ "source": 14 , "target": 15 , "relation":"师妹" },
+{ "source": 16 , "target": 4 , "relation":"父女" },
+{ "source": 16 , "target": 5 , "relation":"母女" },
+{ "source": 16 , "target": 13 , "relation":"爱慕" },
+{ "source": 17 , "target": 13 , "relation":"爱慕" },
+{ "source": 17 , "target": 15 , "relation":"仇人" },
+{ "source": 18 , "target": 13 , "relation":"爱慕" },
+{ "source": 18 , "target": 15 , "relation":"仇人" },
+{ "source": 18 , "target": 17 , "relation":"姐妹" },
+{ "source": 19 , "target": 13 , "relation":"爱慕" },
+{ "source": 20 , "target": 19 , "relation":"父女" },
+{ "source": 20 , "target": 14 , "relation":"爱慕" },
+{ "source": 21 , "target": 16 , "relation":"夫妻" },
+{ "source": 22 , "target": 4 , "relation":"父女" },
+{ "source": 22 , "target": 5 , "relation":"母女" },
+{ "source": 23 , "target": 4 , "relation":"父子" },
+{ "source": 23 , "target": 5 , "relation":"母子" },
+{ "source": 22 , "target": 16 , "relation":"姐妹" },
+{ "source": 22 , "target": 23 , "relation":"姐弟" },
+{ "source": 16 , "target": 23 , "relation":"姐弟" },
+{ "source": 22 , "target": 13 , "relation":"敬佩" },
 
-{ "source": 13 , "target": 4 , "relation":"同一" },
-{ "source": 14 , "target": 5 , "relation":"同一" },
-{ "source": 15 , "target": 10 , "relation":"父子" },
-{ "source": 15 , "target": 8 , "relation":"母子" },
-{ "source": 19 , "target": 7 , "relation":"师徒" },
+
+{ "source": 13 , "target": 10 , "relation":"父子" },
+{ "source": 13 , "target": 8 , "relation":"母子" },
+{ "source": 17 , "target": 7 , "relation":"师徒" },
 
 
 
-{ "source": 24 , "target": 26 , "relation":"祖师" },
+{ "source": 22 , "target": 24 , "relation":"祖师" },
 
 
-{ "source": 26 , "target": 31 , "relation":"师徒" },
-{ "source": 27 , "target": 28 , "relation":"夫妻" },
-{ "source": 27 , "target": 29 , "relation":"父子" },
-{ "source": 28 , "target": 29 , "relation":"母子" },
-{ "source": 30 , "target": 29 , "relation":"爱慕" },
-{ "source": 31 , "target": 29 , "relation":"爱慕" },
-{ "source": 32 , "target": 29 , "relation":"爱慕" },
-{ "source": 33 , "target": 29 , "relation":"爱慕" }
+{ "source": 24 , "target": 29 , "relation":"师徒" },
+{ "source": 25 , "target": 26 , "relation":"夫妻" },
+{ "source": 25 , "target": 27 , "relation":"父子" },
+{ "source": 26 , "target": 27 , "relation":"母子" },
+{ "source": 28 , "target": 27 , "relation":"爱慕" },
+{ "source": 29 , "target": 27 , "relation":"爱慕" },
+{ "source": 30 , "target": 27 , "relation":"爱慕" },
+{ "source": 31 , "target": 27 , "relation":"爱慕" }
 ]
 }
