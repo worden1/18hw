@@ -24,8 +24,8 @@
     .linetext {
 	    font-size: 12px ;
 	    font-family: SimSun;
-	    fill:#2C3E50;
-	    fill-opacity:0.0;
+	    fill:#3498DB;
+	    fill-opacity:1.0;
         }
     .time {
         font-size: 15px;
@@ -363,13 +363,13 @@
 		 	.style("font-weighe","bold");
 
 	svg2.append("text")
-		 	.text("50年")
-		 	.attr("x",610)
+		 	.text("5年及以上")
+		 	.attr("x",620)
 		 	.attr("y",220)
 		 	.attr("text-anchor","middle")
 		 	.attr("dy",10)
 		 	.attr("fill","#515A5A")
-		 	.style("font-size","15px")
+		 	.style("font-size","10px")
 		 	.style("font-weighe","bold");  
 
 	svg2.append("text")
@@ -379,7 +379,7 @@
 		 	.attr("text-anchor","middle")
 		 	.attr("dy",10)
 		 	.attr("fill","#515A5A")
-		 	.style("font-size","15px")
+		 	.style("font-size","10px")
 		 	.style("font-weighe","bold");    
 
 	//
@@ -388,8 +388,8 @@
 
 	var width = 660;
 	var height = 400;
-	var img_w = 77;
-	var img_h = 90;
+	var img_w = 40;
+	var img_h = 40;
 
 	d3.json("data.json", function(error, root1) {
 		
@@ -401,7 +401,7 @@
 							.nodes(root1.nodes)
 							.links(root1.edges)
 							.size([660,400])
-							.linkDistance(200)
+							.linkDistance(250)
 							.charge(-1500)
 							.start();
 							
@@ -427,8 +427,8 @@
 								.enter()
 								.append("image")
 								.attr("class","svg1image")
-								.attr("width",77)
-								.attr("height",90)
+								.attr("width",40)
+								.attr("height",40)
 								.attr("xlink:href",function(d){
 									return d.image;
 								})
@@ -452,6 +452,15 @@
 									svg3.selectAll(".datacircle").remove();
 									svg3.selectAll(".mytext").remove();
 									svg2.selectAll("path").attr("fill","#FADBD8");
+									svg2.selectAll(".name").remove();
+									svg2.append("text")
+							 			 .attr("class","name")
+							 			 .text(d.name)
+							 			 .attr("x",310)
+							 			 .attr("y",70)
+							 			 .attr("text-anchor","middle")
+							 	 		.attr("dy",10)
+							 	 		.attr("fill","#454545");
 									life = d.life;
 									console.log(life);											
 								})
@@ -470,8 +479,8 @@
             				.attr("viewBox", "0 -5 10 10")//坐标系的区域
            					.attr("refX",34)//箭头坐标
             				.attr("refY", -1)
-           					.attr("markerWidth", 12)//标识的大小
-            				.attr("markerHeight", 12)
+           					.attr("markerWidth", 8)//标识的大小
+            				.attr("markerHeight", 8)
             				.attr("orient", "auto")//绘制方向，可设定为：auto（自动确认方向）和 角度值
             				.attr("stroke-width",2)//箭头宽度
             				.append("path")
@@ -570,7 +579,7 @@
         });
 
 	var colorlinear = d3.scale.linear()
-                        .domain([0, 50])
+                        .domain([0, 5])
                         .range([0, 1]);
  
         //定义最小值和最大值对应的颜色
@@ -628,32 +637,44 @@
 	 	 .attr("cy",100)
 	 	 .attr("r",6)
 	 	 .attr("fill","#D5D8DC")
+	 	 .on("mouseover",function(d,i){
+	 	 	d3.select(this).attr("fill","#F1948A");
+		 	svg3.append("text")
+			 	 .attr("class","mytext")
+			 	 .text(d.year)
+			 	 .attr("x",timelinear(d.year))
+			 	 .attr("y",115)
+			 	 .attr("text-anchor","middle")
+			 	 .attr("dy",10)
+			 	 .attr("fill","#D5D8DC")
+	 	 })
 	 	 .on("click",function(d,i){
 	 	 	d3.select(this).attr("fill","#F1948A");
 	 	 	svg2.append("circle")
     			.attr("class","location")
-    			.attr("cx",projection(d.location)[0])
-    			.attr("cy",projection(d.location)[1])
+    			.attr("cx",projection(d.location.sort())[0])
+    			.attr("cy",projection(d.location.sort())[1])
     			.attr("r",5)
-    			.attr("fill","#800080");
+    			.attr("fill","#454545");
     		svg2.append("text")
 	 			 .attr("class","locationdes")
 	 			 .text(d.locationdes)
-	 			 .attr("x",projection(d.location)[0])
-	 			 .attr("y",projection(d.location)[1] - 20)
+	 			 .attr("x",projection(d.location.sort())[0])
+	 			 .attr("y",projection(d.location.sort())[1] - 20)
 	 			 .attr("text-anchor","middle")
 	 	 		.attr("dy",10)
-	 	 		.attr("fill","#800080");
+	 	 		.attr("fill","#454545");
 	 	 	svg2.select(d.spot)
 	 	 		.attr("fill","#fff");	
-	 	 	svg3.append("text")
-	 			 .attr("class","des")
-	 			 .text(d.des)
-	 			 .attr("x",650)
-	 			 .attr("y",155)
-	 			 .attr("text-anchor","middle")
-	 	 		.attr("dy",10)
-	 	 		.attr("fill","#000");
+
+
+	 	 	svg1.append("image")
+         	   .attr("class","thingimage")
+	           .attr("x",0)
+	           .attr("y",-150)
+	    	   .attr("width","300%")
+	    	   .attr("height","300%")
+	    	   .attr("xlink:href","b2.jpg");
 
 	 	 	svg1.append("image")
          	   .attr("class","thingimage")
@@ -664,31 +685,30 @@
 	    	   .attr("xlink:href",d.thingimage)
 	    	   .transition()
                .duration(500)
-               .attr("x",0)
-	           .attr("y",0)
-	    	   .attr("width",600)
-	    	   .attr("height",400);
+               .attr("x",80)
+	           .attr("y",30)
+	    	   .attr("width",500)
+	    	   .attr("height",300);
+	    	svg1.append("text")
+	 			 .attr("class","des")
+	 			 .text(d.des)
+	 			 .attr("x",340)
+	 			 .attr("y",360)
+	 			 .attr("text-anchor","middle")
+	 	 		.attr("dy",10)
+	 	 		.attr("fill","#454545");
 	 	 })
 	 	 .on("mouseout",function(d,i){
 	 	 	svg3.selectAll(".datacircle").attr("fill","#D5D8DC");
 	 	 	svg1.selectAll(".thingimage").remove();
 	 	 	svg2.selectAll(".location").remove();
 	 	 	svg2.selectAll(".locationdes").remove();
-	 	 	svg3.selectAll(".des").remove();
+	 	 	svg1.selectAll(".des").remove();
+	 	 	svg3.selectAll(".mytext").remove();
 	 	 });
 	 	
 
-	 	svg3.selectAll(".mytext")
-	 	 .data(life)
-	 	 .enter()
-	 	 .append("text")
-	 	 .attr("class","mytext")
-	 	 .text(function(d){return d.year})
-	 	 .attr("x",function(d,i){return timelinear(d.year)})
-	 	 .attr("y",115)
-	 	 .attr("text-anchor","middle")
-	 	 .attr("dy",10)
-	 	 .attr("fill","#D5D8DC")
+	 	
 
 
 	 	life.forEach((d,i)=>{
