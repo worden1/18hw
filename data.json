@@ -335,7 +335,7 @@
 { "source": 0 , "target": 4 , "relation":"父子" },
 { "source": 1 , "target": 4 , "relation":"母子" },
 { "source": 4 , "target": 5 , "relation":"夫妻" },
-{ "source": 4 , "target": 6 , "relation":"青梅竹马" },
+{ "source": 4 , "target": 6 , "relation":"爱慕" },
 { "source": 7 , "target": 5 , "relation":"父女" },
 { "source": 2 , "target": 8 , "relation":"养女" },
 { "source": 0 , "target": 9 , "relation":"挚友" },
@@ -344,7 +344,7 @@
 { "source": 8 , "target": 10 , "relation":"夫妻" },
 { "source": 4 , "target": 10 , "relation":"结义" },
 { "source": 11 , "target": 10 , "relation":"师徒" },
-{ "source": 12 , "target": 10 , "relation":"朋友" },
+{ "source": 12 , "target": 4 , "relation":"情敌" },
 { "source": 2 , "target": 10 , "relation":"父子" },
 { "source": 3 , "target": 10 , "relation":"母子" },
 
@@ -353,9 +353,7 @@
 
 
 
-
-
-{ "source": 4 , "target": 13 , "relation":"侄子" },
+{ "source": 13 , "target": 4 , "relation":"敬佩" },
 { "source": 13 , "target": 14 , "relation":"夫妻" },
 { "source": 14 , "target": 15 , "relation":"师妹" },
 { "source": 16 , "target": 4 , "relation":"父女" },
@@ -377,7 +375,7 @@
 { "source": 22 , "target": 16 , "relation":"姐妹" },
 { "source": 22 , "target": 23 , "relation":"姐弟" },
 { "source": 16 , "target": 23 , "relation":"姐弟" },
-{ "source": 22 , "target": 13 , "relation":"敬佩" },
+{ "source": 22 , "target": 13 , "relation":"爱慕" },
 
 
 { "source": 13 , "target": 10 , "relation":"父子" },
